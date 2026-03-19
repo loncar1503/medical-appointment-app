@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="MedicalAppointment.Api/MedicalAppointment.Api.csproj" />
+  <Project Path="MedicalAppointment.Application/MedicalAppointment.Application.csproj" />
+  <Project Path="MedicalAppointment.Domain/MedicalAppointment.Domain.csproj" />
+  <Project Path="MedicalAppointment.Infrastructure/MedicalAppointment.Infrastructure.csproj" />
+</Solution>

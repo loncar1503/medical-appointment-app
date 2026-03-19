@@ -1,0 +1,97 @@
+.app-footer {
+  /* margin-top: 40px;  <-- obriši ovo */
+  padding: 20px 24px;
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.04);
+}
+.app-footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.app-footer__text {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.app-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.app-footer__links span:not(.app-footer__dot) {
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.app-footer__links span:not(.app-footer__dot):hover {
+  color: #4f8cc9;
+}
+
+.app-footer__dot {
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .app-footer__content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.app-footer__team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-footer__powered {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.app-footer__avatars {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+
+.app-footer__avatar {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.app-footer__avatar:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+.app-footer__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}

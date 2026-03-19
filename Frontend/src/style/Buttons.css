@@ -1,0 +1,21 @@
+
+.icon-btn {
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+  color: #374151;
+}
+.icon-btn:hover {
+  background: #f3f4f6;
+}
+.icon-btn.danger {
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+.icon-btn.danger:hover {
+  background: #fee2e2;
+}

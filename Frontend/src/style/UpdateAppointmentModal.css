@@ -1,0 +1,239 @@
+UpdateAppointmentModal.css
+
+.update-appt.modal-overlay.fullscreen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.update-appt .modal.fullscreen {
+  width: min(1100px, calc(100vw - 32px));
+  height: min(860px, calc(100vh - 32px));
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px 18px;
+  overflow: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Header sticky */
+.update-appt .modal-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0 12px;
+  border-bottom: 1px solid #e8eef6;
+}
+
+.update-appt .modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.update-appt .icon-btn {
+ width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.update-appt .icon-btn:hover {
+  background: #eef2f7;
+}
+
+/* Form grid */
+.update-appt .modal-form.fullscreen-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .update-appt .modal.fullscreen {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    border-radius: 14px;
+  }
+
+  .update-appt .modal-form.fullscreen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.update-appt .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.update-appt .field label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #0f172a;
+}
+
+/* Inputs */
+.update-appt .modal-form input,
+.update-appt .modal-form select,
+.update-appt .modal-form textarea {
+  background: #f8fbff;
+  border: 1px solid #dbe5f1;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  transition: 0.15s ease;
+}
+
+.update-appt .modal-form input:focus,
+.update-appt .modal-form select:focus,
+.update-appt .modal-form textarea:focus {
+  border-color: #4f8cc9;
+  box-shadow: 0 0 0 3px rgba(79, 140, 201, 0.18);
+  background: #fff;
+}
+
+.update-appt .modal-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Slots section full width */
+.update-appt .field.slots {
+  grid-column: 1 / -1;
+}
+
+.update-appt .slots-empty {
+  border: 1px dashed #cbd5e1;
+  background: #fbfdff;
+  color: #475569;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+/* Slot buttons grid */
+.update-appt .slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+/* Buttons look */
+.update-appt .slot-btn {
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 12px 12px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.15;
+  font-weight: 700;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  transition: transform 0.08s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.update-appt .slot-btn:hover {
+  border-color: #4f8cc9;
+  box-shadow: 0 8px 22px rgba(79, 140, 201, 0.18);
+  transform: translateY(-1px);
+}
+
+.update-appt .slot-btn.selected {
+  background: #eef7ff;
+  border-color: #2f6ea8;
+  box-shadow: 0 10px 26px rgba(47, 110, 168, 0.22);
+}
+
+/* Picked info */
+.update-appt .slots-picked {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #dbe5f1;
+  background: #fbfdff;
+  color: #0f172a;
+}
+
+.update-appt .hint {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Notes full width */
+.update-appt .field.notes {
+  grid-column: 1 / -1;
+}
+
+/* Error box */
+.update-appt .error {
+  grid-column: 1 / -1;
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+/* Actions */
+.update-appt .modal-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.update-appt .secondary-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.update-appt .secondary-btn:hover {
+  background: #f1f5f9;
+}
+
+.update-appt .primary-btn {
+  background: #4f8cc9;
+  color: #fff;
+  border: 1px solid #4f8cc9;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.update-appt .primary-btn:hover {
+  background: #3d74a8;
+  border-color: #3d74a8;
+}
+
+
+
+

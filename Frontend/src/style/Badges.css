@@ -1,0 +1,27 @@
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+.status-scheduled {
+  background: #fffffe;
+  color: #e67e22;
+}
+.status-completed {
+  background: #fffffe;
+  color: #1e7e34;
+}
+.status-cancelled {
+  background: #fffffe;
+  color: #c82333;
+}

@@ -1,0 +1,330 @@
+CreateAppointmentModal.css
+
+.create-appt.modal-overlay.fullscreen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.create-appt .modal.fullscreen {
+  width: min(1100px, calc(100vw - 32px));
+  height: min(860px, calc(100vh - 32px));
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px 18px;
+  overflow: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Header sticky */
+.create-appt .modal-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0 12px;
+  border-bottom: 1px solid #e8eef6;
+}
+
+.create-appt .modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.create-appt .icon-btn {
+ width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.create-appt .icon-btn:hover {
+  background: #eef2f7;
+}
+
+/* Form grid */
+.create-appt .modal-form.fullscreen-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .create-appt .modal.fullscreen {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    border-radius: 14px;
+  }
+
+  .create-appt .modal-form.fullscreen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.create-appt .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.create-appt .field label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #0f172a;
+}
+
+/* Inputs */
+.create-appt .modal-form input,
+.create-appt .modal-form select,
+.create-appt .modal-form textarea {
+  background: #f8fbff;
+  border: 1px solid #dbe5f1;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  transition: 0.15s ease;
+}
+
+.create-appt .modal-form input:focus,
+.create-appt .modal-form select:focus,
+.create-appt .modal-form textarea:focus {
+  border-color: #4f8cc9;
+  box-shadow: 0 0 0 3px rgba(79, 140, 201, 0.18);
+  background: #fff;
+}
+
+.create-appt .modal-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Slots section full width */
+.create-appt .field.slots {
+  grid-column: 1 / -1;
+}
+
+.create-appt .slots-empty {
+  border: 1px dashed #cbd5e1;
+  background: #fbfdff;
+  color: #475569;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+/* Slot buttons grid */
+.create-appt .slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+/* Buttons look */
+.create-appt .slot-btn {
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 12px 12px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.15;
+  font-weight: 700;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  transition: transform 0.08s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.create-appt .slot-btn:hover {
+  border-color: #4f8cc9;
+  box-shadow: 0 8px 22px rgba(79, 140, 201, 0.18);
+  transform: translateY(-1px);
+}
+
+.create-appt .slot-btn.selected {
+  background: #eef7ff;
+  border-color: #2f6ea8;
+  box-shadow: 0 10px 26px rgba(47, 110, 168, 0.22);
+}
+
+/* Picked info */
+.create-appt .slots-picked {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #dbe5f1;
+  background: #fbfdff;
+  color: #0f172a;
+}
+
+.create-appt .hint {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Notes full width */
+.create-appt .field.notes {
+  grid-column: 1 / -1;
+}
+
+/* Error box */
+.create-appt .error {
+  grid-column: 1 / -1;
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+/* Actions */
+.create-appt .modal-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.create-appt .secondary-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.create-appt .secondary-btn:hover {
+  background: #f1f5f9;
+}
+
+.create-appt .primary-btn {
+  background: #4f8cc9;
+  color: #fff;
+  border: 1px solid #4f8cc9;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.create-appt .primary-btn:hover {
+  background: #3d74a8;
+  border-color: #3d74a8;
+}
+
+
+/* ─── Modal ───────────────────────────────────────────── */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #ffffff;
+  width: 420px;
+  max-width: calc(100vw - 24px);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  transition: 0.2s;
+  background: #f8fbff;
+  color: #1e293b;
+}
+
+.modal-form textarea::placeholder,
+.modal-form input::placeholder {
+  color: #6c757d;
+}
+
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+  border-color: #4f8cc9;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 140, 201, 0.2);
+}
+
+.modal-form textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: transparent;
+  color: #4f8cc9;
+  border: 1px solid #4f8cc9;
+}
+.modal-actions button:first-child:hover {
+  color: #3d74a8;
+  border: 1px solid #3d74a8;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+}
